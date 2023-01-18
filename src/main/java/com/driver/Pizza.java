@@ -25,17 +25,20 @@ public class Pizza {
     }
 
     public void addExtraCheese(){
-        this.addExtraCheesePrice += 80;
-        this.price += this.addExtraCheesePrice;
+        if(this.addExtraCheesePrice < 80){
+            this.addExtraCheesePrice += 80;
+            this.price += this.addExtraCheesePrice;
+        }
+
     }
 
     public void addExtraToppings(){
 
-        if(isVeg){
+        if(isVeg && this.addExtraToppingsPrice < 70){
             this.addExtraToppingsPrice += 70;
             this.price += this.addExtraToppingsPrice;
         }
-        else {
+        else if(this.addExtraToppingsPrice < 120) {
             this.addExtraToppingsPrice += 120;
             this.price += this.addExtraToppingsPrice;
         }
