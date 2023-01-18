@@ -46,9 +46,9 @@ public class Pizza {
     }
 
     public void addTakeaway(){
-        if(this.addTakeawayPrice == 0){
-            this.addTakeawayPrice += 20;
-        }
+
+        this.addTakeawayPrice += 20;
+
     }
 
     public String getBill(){
