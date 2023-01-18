@@ -26,15 +26,18 @@ public class Pizza {
 
     public void addExtraCheese(){
         this.addExtraCheesePrice += 80;
+        this.price += this.addExtraCheesePrice;
     }
 
     public void addExtraToppings(){
 
         if(isVeg){
-            this.addExtraToppingsPrice = 70;
+            this.addExtraToppingsPrice += 70;
+            this.price += this.addExtraToppingsPrice;
         }
         else {
-            this.addExtraToppingsPrice = 140;
+            this.addExtraToppingsPrice += 120;
+            this.price += this.addExtraToppingsPrice;
         }
 
     }
@@ -48,11 +51,9 @@ public class Pizza {
     public String getBill(){
 
         if(this.addExtraCheesePrice != 0){
-            this.price += this.addExtraCheesePrice;
             this.bill += String.format("Extra Cheese Added: %d\n",addExtraCheesePrice);
         }
         if(this.addExtraToppingsPrice != 0){
-            this.price += addExtraToppingsPrice;
             this.bill += String.format("Extra Toppings Added: %d\n",addExtraToppingsPrice);
         }
         if(this.addTakeawayPrice != 0){
