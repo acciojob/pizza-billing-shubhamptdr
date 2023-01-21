@@ -33,6 +33,10 @@ public class Pizza {
     }
 
     public void addExtraToppings(){
+        if(this.addExtraCheesePrice < 80){
+            this.addExtraCheesePrice += 80;
+            this.price += this.addExtraCheesePrice;
+        }
 
         if(isVeg && this.addExtraToppingsPrice < 70){
             this.addExtraToppingsPrice += 70;
@@ -46,9 +50,9 @@ public class Pizza {
     }
 
     public void addTakeaway(){
-
-        this.addTakeawayPrice += 20;
-
+        if(this.addTakeawayPrice == 0){
+            this.addTakeawayPrice += 20;
+        }
     }
 
     public String getBill(){
